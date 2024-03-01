@@ -1,7 +1,8 @@
 # Nvim-colorscheme-theme-chaos_the
 This is only my theme for Nvim/vim. Just put this in your Vim/Nvim color file.
 
-##############################################################################
+#################################################################################
+
 You can modify it any way you want, just modify the hexadecimal code for Gui colors, and cterm for cmd/prompt colors.
 
 _* cterm does not accept hexadecimal code, only numeric code from 0 to 255 *_
