@@ -39,8 +39,6 @@ let g:colors_name = 'chaos_the'
 "_____________________-------------------_____________________--set_basic_colors
 
 
-
-
 "__________________________-------------------_______________________--set_style
 if !exists('g:chaos_the_bold')
   let g:chaos_the_bold = 1
@@ -73,6 +71,7 @@ let s:styles = {
 
 "________________________________________--------------------________--set_cores
 "
+
 " Comentário
 highlight Comment        guifg=#848484 gui=italic      ctermfg=8   cterm=italic      ctermbg=0
 
@@ -115,15 +114,15 @@ highlight Delimiter      guifg=#ad7fa8                 ctermfg=5
 highlight SpecialComment guifg=#ad7fa8 gui=italic      ctermfg=5    cterm=italic
 highlight Debug          guifg=#cc0000                 ctermfg=17
 
-highlight Underlined     guifg=#b4b400                 ctermfg=255
-highlight ignore         guibg=#000000                 ctermbg=0
+highlight Underlined     guifg=#b4b400                 ctermfg=255 "
+highlight ignore         guibg=#000000                 ctermbg=255 "
 highlight Error          guifg=#ffffff guibg=#a40000   ctermfg=255  ctermbg=160
 highlight Todo           guifg=#5f005f guibg=#00d787   ctermfg=53   ctermbg=42
 
 " Destacando Grupos
-highlight Colorcolumn    guibg=#000000                 ctermbg=0
-highlight Conceal        guibg=#000000                 ctermbg=0
-
+highlight Colorcolumn    guibg=#000000                 ctermbg=255 "
+highlight Conceal        guibg=#000000                 ctermbg=255 "
+ 
 highlight Cursor         guifg=#000000 guibg=#ffffff   ctermfg=198  ctermbg=16
  
 highlight CursorIM       guibg=#a40000                 ctermbg=105
@@ -143,8 +142,8 @@ highlight LineNr         guifg=#73d216                 ctermfg=104
 highlight CursorLineNr   guifg=#73d216                 ctermfg=10
 highlight MatchParen                   gui=underline                cterm=underline  ctermbg=0
 
-highlight ModeMsg        guibg=#000000                 ctermbg=0
-highlight MoreMsg        guibg=#000000                 ctermbg=0
+highlight ModeMsg        guibg=#000000                 ctermbg=255 "
+highlight MoreMsg        guibg=#000000                 ctermbg=255 "
 
 highlight NonText        guifg=#ffd7ff                 ctermfg=5
 
@@ -184,7 +183,7 @@ let g:ada_highlight_keywords = {
     \ 'Keyword': ['abort', 'else', 'new', 'return', 'elsif', 'out', 'reverse', 'end', 'in', 'accept', 'entry', 'if', 'of', 'while', 'and', 'is', 'or', 'xor', 'array', 'for', 'limited', 'others', 'procedure', 'body', 'function', 'tagged', 'use', 'case', 'goto', 'type', 'constant', 'loop', 'until', 'declare', 'access', 'subtype', 'private', 'protected', 'separate', 'range', 'record', 'package', 'synchronized', 'protected', 'task', 'protected', 'is', 'task', 'is'],
     \ }
 
-highlight AdaComment        guifg=#848484 gui=italic    ctermfg=227  cterm=italic ctermbg=2
+highlight AdaComment        guifg=#ffff00 gui=italic    ctermfg=227  cterm=italic ctermbg=2  guibg=#002055
 highlight AdaConstant       guifg=#00ff87               ctermfg=48
 highlight AdaString         guifg=#afff5f               ctermfg=84
 highlight AdaCharacter      guifg=#4e9a06               ctermfg=131
@@ -220,30 +219,38 @@ highlight AdaUnderlined     guifg=#b4b400               ctermfg=171
 highlight AdaIgnore         guibg=#000000               ctermbg=42
 highlight AdaError          guifg=#ffffff guibg=#a40000 ctermfg=255 ctermbg=160
 highlight AdaTodo           guifg=#5f005f guibg=#00d787 ctermfg=53  ctermbg=42
+highlight AdaAssignment     guifg=#ff0000 guibg=#ffffff ctermfg=196 ctermbg=255
+highlight AdaAttribute      guifg=#ffff5f gui=italic    ctermfg=227 cterm=italic
+
+
+syntax match AdaAssignment /:=/
+
 
 highlight link AdaBeginEnd AdaKeyword
 
 
 "LINGUAGEM FORTH [gforth]
+"syntax clear
 
 " Define highlighting para paralavras em Forth
 highlight ForthWord         guifg=#ffcc00 guibg=NONE    ctermfg=122    ctermbg=NONE
 highlight ForthDefinedWord  guifg=#ffcc00 guibg=NONE    ctermfg=122    ctermbg=NONE
-highlight ForthComment      guifg=#666666 guibg=NONE    ctermfg=230    ctermbg=NONE   cterm=italic
+highlight ForthComment      guifg=#ffd7af guibg=NONE    ctermfg=230    ctermbg=NONE   cterm=italic
 highlight ForthConstant     guifg=#ff00ff guibg=NONE    ctermfg=165    ctermbg=NONE
 highlight ForthLiteral      guifg=#00ffff guibg=NONE    ctermfg=124    ctermbg=NONE
 highlight ForthFunction     guifg=#00ff00 guibg=NONE    ctermfg=47     ctermbg=NONE
 highlight ForthDefinition   guifg=#00ff00 guibg=NONE    ctermfg=225    ctermbg=NONE
 highlight ForthInclude	    guifg=#00ff00 guibg=NONE    ctermfg=200    ctermbg=NONE
 highlight ForthMacro        guifg=#ff0000 guibg=NONE    ctermfg=196    ctermbg=NONE
-highlight ForthLocalVar     guifg=#0000ff guibg=NONE    ctermfg=227    ctermbg=NONE
-highlight ForthInactiveWord guifg=#999999 guibg=NONE    ctermfg=246    ctermbg=NONE
+highlight ForthLocalVar     guifg=#00d787 guibg=NONE    ctermfg=227    ctermbg=NONE
+highlight ForthInactiveWord guifg=#999999 guibg=NONE    ctermfg=255    ctermbg=NONE
 
-highlight ForthString       guifg=#00ffff guibg=NONE    ctermfg=49     ctermbg=NONE
-highlight ForthNumber       guifg=#ff0000 guibg=NONE    ctermfg=202    ctermbg=NONE
+highlight ForthString       guifg=#87ff87 guibg=NONE    ctermfg=49     ctermbg=NONE
+highlight ForthNumber       guifg=#ff0000 guibg=NONE    ctermfg=196    ctermbg=NONE
 highlight ForthOperator     guifg=#ff00ff guibg=NONE    ctermfg=165    ctermbg=NONE
 highlight ForthEOLComment   guifg=#666666 guibg=NONE    ctermfg=230    ctermbg=NONE
 highlight ForthCompileOnly  guifg=#ff00ff guibg=NONE    ctermfg=165    ctermbg=NONE
+
 
 
 "__________________________________________--------------------________--Plugins
