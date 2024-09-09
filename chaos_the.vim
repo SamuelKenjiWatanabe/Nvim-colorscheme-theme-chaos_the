@@ -149,13 +149,13 @@ highlight NonText        guifg=#ffd7ff                 ctermfg=5
 
 highlight Normal         guibg=#000000                 ctermbg=0
 
-highlight Pmenu          guibg=#d7ffd7                 ctermbg=194
+highlight Pmenu          guibg=#4e6b4e                 ctermbg=194
 highlight PmenuSel       guifg=#000000 guibg=#73d216   ctermfg=229  ctermbg=54
 highlight PmenuSbar      guibg=#000000                 ctermbg=214
-highlight PmenuThumb     guibg=#ffffff                 ctermbg=15
+highlight PmenuThumb     guibg=#000000                 ctermbg=15
 highlight Question       guifg=#73d216                 ctermfg=10
 highlight Search         guifg=#a40000 guibg=#ffffff   ctermfg=105  ctermbg=16
-highlight QuickFixLine   guifg=#ffffff guibg=#a40000   ctermfg=255  ctermbg=5
+highlight QuickFixLine   guifg=#000000 guibg=#a40000   ctermfg=255  ctermbg=5
 highlight SpecialKey     guifg=#5c35cc                 ctermfg=5
 highlight SpellBad                     gui=underline                cterm=underline
 highlight SpellCap       guifg=#a40000                 ctermfg=105
